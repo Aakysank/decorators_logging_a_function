@@ -4,6 +4,7 @@ from functools import wraps
 
 def decorator(fnPtr):
     @wraps(fnPtr)
+    #purpose of wraps - wraps is a decorator function present in functools module, which is used to point out the exact doc string of the function when accessing it
     def timeLogWrapper(*args, **kwds):
         with open('logfile.txt', 'w') as log:
             log.write('Function execution begins\n')
